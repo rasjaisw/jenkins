@@ -10,7 +10,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
         sh 'mvn clean package -DskipTests=true'
-        app = docker.build("rukamble/jenkinsdemo")
+        app = docker.build("rasjaisw/demojenkins")
     }
 
     stage('Push image') {
