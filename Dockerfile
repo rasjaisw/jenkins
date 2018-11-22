@@ -1,4 +1,5 @@
-FROM tomcat:8.0
-ADD ./webapp/target/*.war /usr/local/tomcat/webapps/
-EXPOSE 8080
-CMD ['catalina.sh','run']
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+ADD target/*.jar app.jar
+EXPOSE 8090
+ENTRYPOINT ["java","-jar","/app.jar"]
