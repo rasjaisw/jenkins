@@ -4,7 +4,7 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
+        sh 'mvn clean package -DskipTest=true'
         app = docker.build("rukamble/jenkinsdemo")
     }
 
